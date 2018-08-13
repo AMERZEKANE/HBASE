@@ -87,7 +87,7 @@ class HBaseREST:
       self._putAPI(
         "/{}:{}/{}/".format(self.namespace, table, row),
         data  
-      )
+  ####    )
       
       
  """ HttpFS.py """
@@ -123,4 +123,39 @@ class HttpFS:
           handle.write(block)
     return True
     
- 
+    
+    #### exemple de validation 
+ # !pip install requests_kerberos
+
+# ------------ #
+# HBASE Sample
+# ------------ #
+#sys.path.append("/home/cdsw/test_project001/hadoop_remote_library/")
+from HBaseREST import HBaseREST
+
+hbase = HBaseREST(namespace="datalab")
+hbase.version()
+hbase.listTables()
+
+# PUT in table "test_table",
+# in row "1",
+# in column family "cf1",
+# in column "firstname"
+# the value "Jean"
+hbase.putCell('test_table','500', 'cf1:firstname', 'Omar')
+
+hbase.putCell("test_table", "500", "cf1:lastname", "Omar")
+hbase.putCell("test_table", "500", "cf1:age", "50")
+hbase.getRow("test_table", "400")
+hbase.getRow("authentification",'1')
+
+
+# ------------ #
+# HDFS Getfile
+# ------------ #
+
+from HttpFS import HttpFS
+
+httpfs = HttpFS()
+httpfs.getFile("/tmp/myfile", "myfile") # reload left panel to see new created file
+
