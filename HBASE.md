@@ -101,3 +101,5 @@ reseau:$ 'cette comande: hadoop fs -copyFromLocal emp_data.csv /user/a4175704/le
 
 * 'hadoop fs -cat /user/a4175704/les_fichier_csv/emp_data.csv'
 
+### Quelque TP HBASE
+### https://insatunisia.github.io/TP-BigData/tp4/
