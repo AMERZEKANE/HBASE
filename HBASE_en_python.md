@@ -1,5 +1,5 @@
 # HBASE_en_python
-### charger le CSV en HBASE
+### charger le CSV en HBASE """je travail avec la distrubution Cloudera"""
 * import os
 * os.system("cd bin/")
 os.system("hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=',' -Dimporttsv.columns='HBASE_ROW_KEY,cf1:ename,cf1:designation,cf1:manager,cf2:hire_date,cf2:sal,cf2:deptno' datalab:emp_data /user/a4175704/les_fichier_csv/emp_data.csv")
